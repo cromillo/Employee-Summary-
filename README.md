@@ -56,13 +56,6 @@ app.js         // Runs the application
 
 * Create multiple HTML templates for each type of user. For example, you could use the following templates:
 
-  * `main.html`
-
-  * `engineer.html`
-  
-  * `intern.html`
-  
-  * `manager.html`
 
 * You will want to make your methods as pure as possible. This means try to make your methods simple so that they are easier to test.
 
