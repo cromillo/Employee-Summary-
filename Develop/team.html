@@ -1,45 +1,4 @@
-const inquirer = require("inquirer");
-const fs = require("fs");
-const util = require("util");
 
-const writeFileAsync = util.promisify(fs.writeFile);
-
-function promptUser() {
-  return inquirer.prompt([
-    {
-      type: "input",
-      name: "name",
-      message: "What is your name?"
-    },
-    {
-      type: "input",
-      name: "id",
-      message: "What is your id number?"
-    },
-    {
-      type: "input",
-      name: "email",
-      message: "What is your email address?"
-    },
-    {
-      type: "input",
-      name: "school",
-      message: "What school do you attend?"
-    },
-    {
-      type: "input",
-      name: "github",
-      message: "Enter your GitHub Username"
-    },
-    {
-      type: "input",
-      name: "officeNumber",
-      message: "Enter your office number"
-    }
-  ]);
-}
-function generateHTML(answers) {
-  return `
   <!DOCTYPE html>
   <html lang="en">
   <head>
@@ -151,18 +110,4 @@ function generateHTML(answers) {
       </div>
     </div>
   </body>
-  </html>`;
-}
-
-promptUser()
-  .then(function(answers) {
-    const html = generateHTML(answers);
-
-    return writeFileAsync("team.html", html);
-  })
-  .then(function() {
-    console.log("Successfully wrote to team.html");
-  })
-  .catch(function(err) {
-    console.log(err);
-  });
+  </html>
