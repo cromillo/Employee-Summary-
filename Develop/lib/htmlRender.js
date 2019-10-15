@@ -11,6 +11,8 @@ const render = employees => {
     return renderMain(html.join(""))
 }
 
+
+
 const renderManager = manager => {
     let template = fs.readfileSync(path.resolve(templateDir,"manager.html"),"utf8")
     template = replacePlaceholders (template,"name",manager.getName())

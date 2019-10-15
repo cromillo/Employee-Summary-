@@ -1,6 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
+const Employee = require("./lib/Employee");
+
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -10,6 +12,12 @@ function promptUser() {
       type: "input",
       name: "name",
       message: "What is your name?"
+    },
+    {
+      type: "checkbox",
+      message: "Enter your role",
+      choices: ["Engineer", "Intern", "Manager"],
+      name: "colors",
     },
     {
       type: "input",
