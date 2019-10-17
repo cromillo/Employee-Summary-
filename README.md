@@ -1,0 +1,1 @@
+The Employee Summary application will prompt the user for information about the employees, such as names, title, e-mail address, school, etc. Tests within the application were completed and shows all units passed. Application was created using JQuery, HTML, and node.js.
