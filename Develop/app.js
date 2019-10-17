@@ -14,15 +14,14 @@ function promptUser() {
       message: "What is your name?"
     },
     {
-      type: "checkbox",
-      message: "Enter your role",
-      choices: ["Engineer", "Intern", "Manager"],
-      name: "colors",
+      type: "input",
+      message: "Are you an Engineer, Manager, or Intern?",
+      name: "role",
     },
     {
       type: "input",
       name: "id",
-      message: "What is your id number?"
+      message: "What is your ID number?"
     },
     {
       type: "input",
@@ -69,92 +68,22 @@ function generateHTML(answers) {
           <!--MANAGER CARD-->
           <div class="card mx-auto" style="width: 20rem;">
             <div class="card-body bg-primary text-white">
-              <h5 class="card-title">NAME</h5>
-              <h5 class="card-text">MANAGER</h5>
+              <h5 class="card-title">${answers.name}</h5>
+              <h5 class="card-text">${answers.role}</h5>
             </div>
             <div class="container">
               <div class="card-body pl-1">
             <ul class="list-group " style="width: 17rem;">
-              <li class="list-group-item">ID:</li>
-              <li class="list-group-item">Email:</li>
-              <li class="list-group-item">Office Number:</li>
+              <li class="list-group-item">ID: ${answers.id}</li>
+              <li class="list-group-item">Email:${answers.email}</li>
+              <li class="list-group-item">Office Number: ${answers.officeNumber}</li>
+              <li class="list-group-item">School: ${answers.school}</li>
+              <li class="list-group-item">Github: ${answers.github}</li>
             </ul>
           </div>
             </div>
           </div>
   
-  
-           <!--ENGINEER CARD-->
-           <div class="card mx-auto" style="width: 20rem;">
-              <div class="card-body bg-primary text-white">
-                <h5 class="card-title">NAME</h5>
-                <h5 class="card-text">ENGINEER</h5>
-              </div>
-              <div class="container">
-                <div class="card-body pl-1">
-              <ul class="list-group " style="width: 17rem;">
-                <li class="list-group-item">ID:</li>
-                <li class="list-group-item">Email:</li>
-                <li class="list-group-item">Github:</li>
-              </ul>
-            </div>
-              </div>
-            </div>
-  
-         <!--ENGINEER CARD-->
-         <div class="card mx-auto" style="width: 20rem;">
-            <div class="card-body bg-primary text-white">
-              <h5 class="card-title">NAME</h5>
-              <h5 class="card-text">ENGINEER</h5>
-            </div>
-            <div class="container">
-              <div class="card-body pl-1">
-            <ul class="list-group " style="width: 17rem;">
-              <li class="list-group-item">ID:</li>
-              <li class="list-group-item">Email:</li>
-              <li class="list-group-item">Github:</li>
-            </ul>
-          </div>
-            </div>
-          </div>
-   </div>
-   <div class="row col-md-12 mx-auto">
-  
-      <!--MANAGER CARD-->
-      <div class="card mt-5 mx-auto" style="width: 20rem;">
-        <div class="card-body bg-primary text-white">
-          <h5 class="card-title">NAME</h5>
-          <h5 class="card-text">MANAGER</h5>
-        </div>
-        <div class="container">
-          <div class="card-body pl-1">
-        <ul class="list-group " style="width: 17rem;">
-          <li class="list-group-item">ID:</li>
-          <li class="list-group-item">Email:</li>
-          <li class="list-group-item">Office Number:</li>
-        </ul>
-      </div>
-        </div>
-      </div>
-  
-  
-       <!--ENGINEER CARD-->
-       <div class="card mt-5 mx-auto" style="width: 20rem;">
-          <div class="card-body bg-primary text-white">
-            <h5 class="card-title">NAME</h5>
-            <h5 class="card-text">ENGINEER</h5>
-          </div>
-          <div class="container">
-            <div class="card-body pl-1">
-          <ul class="list-group " style="width: 17rem;">
-            <li class="list-group-item">ID:</li>
-            <li class="list-group-item">Email:</li>
-            <li class="list-group-item">Github:</li>
-          </ul>
-        </div>
-          </div>
-        </div>
-    </div>
        
       </div>
     </div>
@@ -169,7 +98,7 @@ promptUser()
     return writeFileAsync("team.html", html);
   })
   .then(function() {
-    console.log("Successfully wrote to team.html");
+   
   })
   .catch(function(err) {
     console.log(err);
